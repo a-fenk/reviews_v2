@@ -140,7 +140,7 @@ def reset_reviews_count():
     data = get_data(sheet=source_wb[Config.REVIEWS_SHEET], geo=geo)
     print(f'{time.strftime("%H:%M:%S", time.localtime())} - success')
 
-    less = {key: value for key, value in data.items() if value[Config.MASTER_COLUMN] == 'mitskevich-ea' and value[Config.REVIEWS_COUNT_COLUMN] <= Config.LTE and
+    less = {key: value for key, value in data.items() if value[Config.REVIEWS_COUNT_COLUMN] <= Config.LTE and
             (value[Config.GEO_METRO_COLUMN] or value[Config.GEO_DISTRICT_COLUMN])}
     greater = {key: value for key, value in data.items() if value[Config.REVIEWS_COUNT_COLUMN] >= Config.GTE and
                not value[Config.GEO_METRO_COLUMN] and not value[Config.GEO_DISTRICT_COLUMN]}
