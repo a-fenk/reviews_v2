@@ -159,7 +159,6 @@ def sort_reviews():
 
     print(f'{time.strftime("%H:%M:%S", time.localtime())} - trying to get masters ...')
     masters = get_masters(source_wb)
-    masters = [master for master in masters if master == 'mitskevich-ea']
     print(f'{time.strftime("%H:%M:%S", time.localtime())} - success, found {len(masters)} masters')
 
     result_data = []
